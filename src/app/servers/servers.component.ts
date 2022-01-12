@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
   allowAddServers: boolean = false;
   serverCreation: string = 'No server is created';
+  serverName: string = '';
 
   constructor() {
     setTimeout(() => {
@@ -21,5 +22,9 @@ export class ServersComponent implements OnInit {
 
   onServerCrate() {
     this.serverCreation = 'Server is created successfully';
+  }
+
+  onInputChange(event: Event) {
+    this.serverName = (<HTMLInputElement>event.target).value;
   }
 }
