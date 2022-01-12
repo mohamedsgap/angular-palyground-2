@@ -11,6 +11,7 @@ export class ServersComponent implements OnInit {
   allowAddServers: boolean = false;
   serverCreation: string = 'No server is created';
   serverName: string = '';
+  serverNameForTwoWayDataBinding: string = '';
 
   constructor() {
     setTimeout(() => {

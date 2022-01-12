@@ -1,6 +1,9 @@
 <p>servers works!</p>
 <input type="text" (input)="onInputChange($event)" />
-<p>{{ serverName }}</p>
+<p>serverNameOneWayDataBinding: {{ serverName }}</p>
+
+<input type="text" [(ngModel)]="serverNameForTwoWayDataBinding" />
+<p>serverNameTwoWayDataBinding: {{ serverNameForTwoWayDataBinding }}</p>
 
 <button
   class="btn btn-primary"
