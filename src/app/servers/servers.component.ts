@@ -22,7 +22,9 @@ export class ServersComponent implements OnInit {
   ngOnInit(): void {}
 
   onServerCrate() {
-    this.serverCreation = 'Server is created successfully';
+    this.serverCreation =
+      'Server is created successfully with name is' +
+      this.serverNameForTwoWayDataBinding;
   }
 
   onInputChange(event: Event) {

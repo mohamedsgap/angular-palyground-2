@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'angular-course-app';
+  username: string = '';
+  isBtnDisabled: boolean = this.username.length === 0;
+
+  resetUsername() {
+    this.username = '';
+  }
 }

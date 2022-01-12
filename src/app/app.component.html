@@ -4,4 +4,16 @@
   <app-servers></app-servers>
   <app-warning-alert></app-warning-alert>
   <app-success-alert></app-success-alert>
+
+  <label>Username</label> <br />
+  <input type="text" [(ngModel)]="username" />
+  <p>Username is: {{ username }}</p>
+
+  <button
+    [disabled]="username.length === 0"
+    (click)="resetUsername()"
+    class="btn btn-primary"
+  >
+    reset Username value ;)
+  </button>
 </div>
