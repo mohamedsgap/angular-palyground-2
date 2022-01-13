@@ -12,6 +12,7 @@ export class ServersComponent implements OnInit {
   serverCreation: string = 'No server is created';
   serverName: string = '';
   serverNameForTwoWayDataBinding: string = '';
+  isServerCreated: boolean = false;
 
   constructor() {
     setTimeout(() => {
@@ -22,6 +23,7 @@ export class ServersComponent implements OnInit {
   ngOnInit(): void {}
 
   onServerCrate() {
+    this.isServerCreated = true;
     this.serverCreation =
       'Server is created successfully with name is' +
       this.serverNameForTwoWayDataBinding;
