@@ -1,3 +1,4 @@
 <p>The Server component</p>
-<p>{{ "Server" }} with ID {{ serverId }} is {{ serverStatus }}</p>
-<p>{{ "Server" }} with ID {{ serverId2 }} is {{ againServerStatus() }}</p>
+<p [ngStyle]="{ backgroundColor: getColor(), color: 'white' }">
+  {{ "Server" }} with ID {{ serverId }} is {{ serverStatus }}
+</p>
