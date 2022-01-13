@@ -16,4 +16,22 @@
   >
     reset Username value ;)
   </button>
+  <br />
+
+  <p *ngIf="showDetails">secret password: 'yes day!'</p>
+  <br />
+  <button class="btn btn-danger" (click)="showTextDetails()">
+    <ng-container *ngIf="showDetails"> hide details </ng-container>
+    <ng-container *ngIf="!showDetails"> show details </ng-container>
+  </button>
+  <br />
+  <p
+    *ngFor="let num of list"
+    [ngStyle]="{ backgroundColor: changeBackgroudColor(num) }"
+    [ngClass]="{ white: num >= 5 }"
+  >
+    button is clicked numers of time: {{ num }}
+  </p>
 </div>
+
+<!-- to get an index in ngFor incase of anything not number, let i === index, check over i -->
