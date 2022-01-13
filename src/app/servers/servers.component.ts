@@ -13,6 +13,7 @@ export class ServersComponent implements OnInit {
   serverName: string = '';
   serverNameForTwoWayDataBinding: string = '';
   isServerCreated: boolean = false;
+  servers: Array<string> = ['hello', 'welcome'];
 
   constructor() {
     setTimeout(() => {
@@ -24,6 +25,7 @@ export class ServersComponent implements OnInit {
 
   onServerCrate() {
     this.isServerCreated = true;
+    this.servers.push(this.serverNameForTwoWayDataBinding);
     this.serverCreation =
       'Server is created successfully with name is' +
       this.serverNameForTwoWayDataBinding;
