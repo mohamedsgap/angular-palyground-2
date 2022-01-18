@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   serverElements = [];
+  @ViewChild('inputRefWithViewChild') inputRefWithViewChild;
 
   onServerCreated(serverData) {
     this.serverElements.push({
@@ -14,5 +15,12 @@ export class AppComponent {
       name: serverData.name,
       content: serverData.content,
     });
+  }
+
+  logRefVal(inputRef) {
+    console.log('log ref', inputRef, inputRef.value);
+  }
+  logRefVal2() {
+    console.log('log ref with viewChild', this.inputRefWithViewChild);
   }
 }

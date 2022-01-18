@@ -12,4 +12,12 @@
       ></app-server-element>
     </div>
   </div>
+  <input #inputRef />
+  <button class="btn btn-danger" (click)="logRefVal(inputRef)">
+    log ref value
+  </button>
+  <input #inputRefWithViewChild />
+  <button class="btn btn-secondary" (click)="logRefVal2()">
+    log ref value with viewChild
+  </button>
 </div>
