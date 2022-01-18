@@ -21,4 +21,12 @@
   <button class="btn btn-secondary" (click)="logRefVal2()">
     log ref value with viewChild
   </button>
+
+  <app-game-controller
+    (onStartGame)="onStartGame($event)"
+    (onStopGame)="onStopGame()"
+  >
+  </app-game-controller>
+  <app-even *ngFor="let number of evenNumbers" [number]="number"></app-even>
+  <app-odd *ngFor="let number of oddNumbers" [number]="number"></app-odd>
 </div>

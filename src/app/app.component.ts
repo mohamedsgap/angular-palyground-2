@@ -8,6 +8,8 @@ import { Component, ViewChild } from '@angular/core';
 export class AppComponent {
   serverElements = [];
   title: string = 'first value ever';
+  oddNumbers: number[] = [];
+  evenNumbers: number[] = [];
   @ViewChild('inputRefWithViewChild') inputRefWithViewChild;
 
   onServerCreated(serverData) {
@@ -76,4 +78,13 @@ export class AppComponent {
   ngOnDestroy() {
     console.log('ngOnDestroy called!');
   }
+  onStartGame(event: number) {
+    console.log(event);
+    if (event % 2 === 0) {
+      this.evenNumbers.push(event);
+    } else {
+      this.oddNumbers.push(event);
+    }
+  }
+  onStopGame() {}
 }
