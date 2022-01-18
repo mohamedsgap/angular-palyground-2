@@ -1,37 +1,15 @@
 <div class="container">
-  <h1 class="title">Hi Mohamed :)</h1>
+  <app-cockpit
+    [serverElements]="serverElements"
+    (onServerCreated)="onServerCreated($event)"
+  ></app-cockpit>
   <hr />
-  <app-servers></app-servers>
-  <app-warning-alert></app-warning-alert>
-  <app-success-alert></app-success-alert>
-
-  <label>Username</label> <br />
-  <input type="text" [(ngModel)]="username" />
-  <p>Username is: {{ username }}</p>
-
-  <button
-    [disabled]="username.length === 0"
-    (click)="resetUsername()"
-    class="btn btn-primary"
-  >
-    reset Username value ;)
-  </button>
-  <br />
-
-  <p *ngIf="showDetails">secret password: 'yes day!'</p>
-  <br />
-  <button class="btn btn-danger" (click)="showTextDetails()">
-    <ng-container *ngIf="showDetails"> hide details </ng-container>
-    <ng-container *ngIf="!showDetails"> show details </ng-container>
-  </button>
-  <br />
-  <p
-    *ngFor="let num of list"
-    [ngStyle]="{ backgroundColor: changeBackgroudColor(num) }"
-    [ngClass]="{ white: num >= 5 }"
-  >
-    button is clicked numers of time: {{ num }}
-  </p>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-server-element
+        *ngFor="let serverElement of serverElements"
+        [element]="serverElement"
+      ></app-server-element>
+    </div>
+  </div>
 </div>
-
-<!-- to get an index in ngFor incase of anything not number, let i === index, check over i -->
