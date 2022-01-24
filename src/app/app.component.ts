@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'Angular Course Project';
+  isRecipeClicked: boolean = true;
+  isShoppingListClicked: boolean = false;
+
+  onRecipeClicked() {
+    this.isRecipeClicked = true;
+    this.isShoppingListClicked = false;
+  }
+
+  onShoppingListClicked() {
+    this.isRecipeClicked = false;
+    this.isShoppingListClicked = true;
+  }
 }
