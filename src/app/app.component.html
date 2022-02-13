@@ -1,12 +1,8 @@
-<app-header
-  (onRecipeClicked)="onRecipeClicked()"
-  (onShoppingListClicked)="onShoppingListClicked()"
-></app-header>
+<app-header></app-header>
 <div clas="container app">
   <div class="row">
     <div class="col-md-12">
-      <app-recipes *ngIf="isRecipeClicked"></app-recipes>
-      <app-shopping-list *ngIf="isShoppingListClicked"></app-shopping-list>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

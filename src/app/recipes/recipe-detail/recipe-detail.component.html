@@ -5,10 +5,10 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <h1>{{ currentSelected.name }}</h1>
+    <h1>{{ recipe.name }}</h1>
     <img
-      [src]="currentSelected.imagePath"
-      alt="{{ currentSelected.name }}"
+      [src]="recipe.imagePath"
+      alt="{{ recipe.name }}"
       class="img-responsive"
       width="350px"
       height="100px"
@@ -28,19 +28,21 @@
             >To Shopping List</a
           >
         </li>
-        <li><a href="#">Edit Recipe</a></li>
-        <li><a href="#">Delete Recipe</a></li>
+        <li>
+          <a style="cursor: pointer" (click)="onEditRecipe()">Edit Recipe</a>
+        </li>
+        <li><a style="cursor: pointer">Delete Recipe</a></li>
       </ul>
     </div>
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-12">{{ currentSelected.description }}</div>
+  <div class="col-xs-12">{{ recipe.description }}</div>
 </div>
 <div class="row">
   <div class="col-xs-12">
     <ul>
-      <li class="list-group-item" *ngFor="let i of currentSelected.ingredients">
+      <li class="list-group-item" *ngFor="let i of recipe.ingredients">
         {{ i.name }} -- {{ i.amount }}
       </li>
     </ul>
